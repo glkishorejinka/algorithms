@@ -7,22 +7,6 @@ public class RevenueMilestones {
         return new int[0];
     }
 
-    private int getMileStoneDay(int[] revenues, int start, int end, int target){
-        while(start <= end){
-            int mid = start + (end - start)/2;
-            if(target == revenues[mid]) return mid + 1;
-            if(target < revenues[mid]){
-                if(target > revenues[mid - 1]) return mid + 1;
-                end = mid - 1;
-            }
-            if(target > revenues[mid]){
-                if(target < revenues[mid + 1]) return mid + 2;
-                start = mid + 1;
-            }
-        }
-        return -1;
-    }
-
     public void run() {
         //TEST CASE 1
         int revenues_1[] = {100, 200, 300, 400, 500};
